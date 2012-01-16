@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Wobbly - A jQuery Plugin for iOS style deletes</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/jRumble.js"></script>
+		<script type="text/javascript" src="../src/wobbly.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".wobble").wobbly("start");
+			});
+		</script>
+	</head>
+	
+	<body>
+		<h1>This is Wobbly</h1>
+
+		<span class='wobble'>A Wobblin piece of text.</span> <p /><p />
+		<span class='wobble'>Another Wobblin piece of text</span> <p /><p />
+		<div class='wobble' style='width: 60px; height: 60px; border: 1px solid black;'></div>
+		<div class='wobble' style='width: 400px; height: 400px; border: 1px solid black;'></div>
+	</body>
+</html>

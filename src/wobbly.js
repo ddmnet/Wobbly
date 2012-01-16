@@ -17,12 +17,15 @@
 
 		return this.each(function() {
 			
+			var $element = $(this);
+
 			//Start the wobble.
 			if(action === "start") {
-				
-			} else {
-				`
+				start_wobble($element, options);
+			
 			//End the wobble.
+			} else {
+				stop_wobble($element);
 			}
 
 		});
@@ -30,7 +33,7 @@
 	};
 
 	$.fn.wobbly.defaultOptions = {
-		borderColor : "white",
+		borderColor : "red",
 		backgroundColor : "black",
 		textColor : "green",
 		callback : function() {},
@@ -39,10 +42,40 @@
 
 	/* Private Functions */
 
-	function start_wobble($element) {
-		//Add x to screen.
-		//Add callback to item.
+	function add_anchor($element, options) {
+		var $a = $("<a>X</a>");
+		
+		//Add css the new element.
+		$a.css({
+			'border' : options.borderColor,
+			'backgroundColor' : options.backgroundColor,
+			'color' : options.textColor
+		});
+
+		//Add the delete trigger to the element.
+		$a.click(function() {
+			$(this).parent().trigger("wobbly:delete");
+		});
+
+		$a.appendTo($element);
+
+		return $element;
+	}
+
+	function start_wobble($element, options) {
+		$element = add_anchor($element, options);
+		$element.bind("wobbly:delete", function() {
+			$(this).fadeOut("slow", function() {
+				console.log(options);
+				$(this).wobbly("stop");
+				$(this).hide();
+			});
+		});
+
 		//start the rumble
+		$element.jrumble({
+			speed: 65
+		});
 		$element.trigger('startRumble');
 	}
 

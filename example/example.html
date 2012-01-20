@@ -6,7 +6,12 @@
 		<script type="text/javascript" src="../src/wobbly.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$(".wobble").wobbly("start");
+				$(".wobble").wobbly("start", {
+					size : 2,
+					callback : function() {
+						alert("wheee!");
+					}
+				});
 			});
 		</script>
 	</head>

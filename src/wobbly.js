@@ -85,24 +85,6 @@ function lerp( pta, ptb, t) {
 		return $element;
 	}
 
-	function add_touch_and_hold($element) {
-		 var t;
-
-		var repeat = function () {
-		    action();
-		    t = setTimeout(repeat, start);
-		    start = start / speedup;
-		}
-
-		btn.mousedown = function() {
-		    repeat();
-		}
-
-		btn.mouseup = function () {
-		    clearTimeout(t);
-		}
-	}
-
 	function remove_anchor($element) {
 		$element.children().each(function() {
 			if($(this).hasClass("isAnchor")) {
@@ -114,7 +96,7 @@ function lerp( pta, ptb, t) {
 
 	function start_wobble($element, options) {
 		$element = add_anchor($element, options);
-		$element = add_touch_and_hold($element);
+
 		$element.bind("wobbly:delete", function() {
 			$(this).fadeOut("slow", function() {
 				$(this).wobbly("stop");

@@ -14,7 +14,7 @@
 * The two requirements for Wobbly are the jRumble plugin, and a webkit browser.
 *
 * @author Jack Slingerland (jacks@teamddm.com)
-* @author David Elliot (davide@teamddm.com)
+* @author David Elliott (davide@teamddm.com)
 * @link http://www.teamddm.com
 * @version 1.0.0
 */
@@ -55,7 +55,8 @@
 	//Default options for the plugin
 	$.fn.wobbly.defaultOptions = {
 		borderColor : "black",
-		backgroundColor : "red",
+		backgroundColor : "-webkit-gradient(linear, left top, left bottom, color-stop(0%,#e20000) color-stop(100%,#b70000))",
+		backgroundColor : "-webkit-linear-gradient(top, #e20000 0%,#b70000 100%)",
 		textColor : "white",
 		size : 1,
 		callback : function() {}
@@ -64,24 +65,39 @@
 	/* Private Functions */
 
 	function add_anchor($element, options) {
-		var $span = $("<span>X</span>");
+		var $span = $("<span>&times;</span>");
 		var $a = $("<a></a>");
 		
 		//Add css the new anchor element.
 		$a.css({
-			'border-color' : options.borderColor,
-			'background-color' : options.backgroundColor,
+			'border' : (options.size * 3) + 'px solid white',
+			'padding' : (options.size * 5),
+			'background' : options.backgroundColor,
 			'color' : options.textColor,
 			'height' : (options.size * 25) + 'px',
-			'-moz-border-radius' : (options.size * 12) + 'px',
-			'-webkit-border-radius' : (options.size * 12) + 'px',
+			'-moz-border-radius' : (options.size * 20) + 'px',
+			'-webkit-border-radius' : (options.size * 20) + 'px',
 			'width' : (options.size * 25) + 'px',
-			'display' : "block"
+			'display' : "block",
+			'text-align' : 'center',
+			'vertical-align' : 'middle',
+			'-webkit-box-shadow' : '0px 0px 5px 2px rgba(0, 0, 0, .5)',
+			'box-shadow' : '0px 0px 5px 2px rgba(0, 0, 0, .5)',
+			'position' : 'absolute',
+			'top' : '-' + (options.size * 12.5) + 'px',
+			'left' : '-' + (options.size * 12.5) + 'px'
 		});
 
 		//Add css to span element
 		$span.css({
-			'font-size' : (options.size * 14)
+			'font-size' : (options.size * 30),
+			'font-weight' : 'bold',
+			'text-shadow' : '0px 1px 2px rgba(0, 0, 0, .5)',
+			'overflow' : 'auto',
+			'font-family' : 'helvetica, helvetica-neue, arial, sans-serif',
+			'display' : 'block',
+			'margin-top' : '-30%'
+
 		});
 
 		//Add attribute to identify this element

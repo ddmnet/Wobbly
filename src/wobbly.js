@@ -137,9 +137,9 @@
 
 		//start the rumble
 		$element.jrumble({
-			speed: 58,
-			x : 2,
-			y : 3,
+			speed: 48,
+			x : 1.5,
+			y : 1,
 			rotation : 1
 		});
 		$element.trigger('startRumble');

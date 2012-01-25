@@ -57,10 +57,10 @@
 	//Default options for the plugin
 	$.fn.wobbly.defaultOptions = {
 		borderColor : "black",
-		//backgroundColor : "-webkit-gradient(linear, left top, left bottom, color-stop(0%,#e20000) color-stop(100%,#b70000))",
 		backgroundColor : "-webkit-linear-gradient(top, #e20000 0%,#b70000 100%)",
 		textColor : "white",
 		size : 1,
+		position : "left",
 		callback : function() {}
 	};
 
@@ -86,9 +86,15 @@
 			'-webkit-box-shadow' : '0px 0px 5px 2px rgba(0, 0, 0, .5)',
 			'box-shadow' : '0px 0px 5px 2px rgba(0, 0, 0, .5)',
 			'position' : 'absolute',
-			'top' : '-' + (options.size * 12.5) + 'px',
-			'left' : '-' + (options.size * 12.5) + 'px'
+			'top' : '-' + (options.size * 12.5) + 'px'
 		});
+
+		//Where should the element be placed?
+		if(options.position === "left") {
+			$a.css({ 'left' : '-' + (options.size * 12.5) + 'px' });
+		} else {
+			$a.css({ 'right' : '-' + (options.size * 12.5) + 'px' });
+		}
 
 		//Add css to span element
 		$span.css({

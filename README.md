@@ -1,4 +1,4 @@
-# Wobbly - A jQuery plugin for iOS styly wobbly element deletion.
+# @Wobbly - A jQuery plugin for iOS style wobbly element deletion.
 
 The Wobbly jQuery plugin makes it easy to have iOS stile wobbly (jiggly) icons for your delete actions.  To use Wobbly, all you need is a Webkit browser (Chrome, Safari).
 
@@ -31,6 +31,6 @@ borderColor : "black"
 backgroundColor : "-webkit-linear-gradient(top, #e20000 0%,#b70000 100%)"
 textColor : "white"
 size : 1
-position : "left"  #or "right".
+position : "left"  //or "right".
 callback : function() {}
 ```

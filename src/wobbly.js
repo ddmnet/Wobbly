@@ -7,6 +7,7 @@
 * $("div").wobbly();  //Start wobbly with no callbacks and using default options.
 * $("div").wobbly("start", { //Start wobbly, with the corner "X" at twice the size
 *	size : 2,				 //and a callback.
+*	position : "left",
 *	callback : function() { alert('done'); }
 * });
 * $("div").wobbly("stop");  //Stop the wobble.
@@ -123,7 +124,7 @@
 	}
 
 	function add_css() {
-		var css = '<style type="text/css"> @-webkit-keyframes wobbly { 0% { -webkit-transform: translate(2px, 1px) rotate(0deg); } 10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); } 20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); } 30% { -webkit-transform: translate(0px, 2px) rotate(0deg); } 40% { -webkit-transform: translate(1px, -1px) rotate(1deg); } 50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); } 60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); } 70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); } 80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); } 90% { -webkit-transform: translate(2px, 2px) rotate(0deg); } 100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); } } .wobble:hover, .wobble { display:inline-block; -webkit-animation-name: wobbly;	-webkit-animation-duration: 0.8s; -webkit-transform-origin:50% 50%; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; } </style>';
+		var css = '<style type="text/css"> @-webkit-keyframes wobbly { 0% { -webkit-transform: translate(2px, 1px) rotate(0deg); } 10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); } 20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); } 30% { -webkit-transform: translate(0px, 2px) rotate(0deg); } 40% { -webkit-transform: translate(1px, -1px) rotate(1deg); } 50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); } 60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); } 70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); } 80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); } 90% { -webkit-transform: translate(2px, 2px) rotate(0deg); } 100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); } } .wobble:hover, .wobble { display:inline-block; position:relative; -webkit-animation-name: wobbly;	-webkit-animation-duration: 0.8s; -webkit-transform-origin:50% 50%; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; } </style>';
 		$('head').append(css);
 	}
 

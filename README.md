@@ -2,7 +2,7 @@
 
 The Wobbly jQuery plugin makes it easy to have iOS style wobbly (jiggly) icons for your delete actions.  To use Wobbly, all you need is a Webkit browser (Chrome, Safari).
 
-The demo for Wobbly is available at: http://http://ddmnet.github.com/Wobbly
+The demo for Wobbly is available at: http://ddmnet.github.com/Wobbly
 
 ### How to use Wobbly
 

@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Wobbly - A jQuery Plugin for iOS style deletes</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="wobbly.js"></script>
+		<script type="text/javascript">
+			function start_wobbly() {
+				$(".theW").wobbly("start", {
+					size : .75,
+					position: "left",
+					callback : function() {
+						alert("In callback after item is deleted.");
+					}
+				});
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h1>This is Wobbly</h1>
+		<a href="#" onclick="start_wobbly()">Start Wobbly</a> | <a href="#" onclick="$('.wobble').wobbly('stop');">Stop Wobbly </a><br /><br />
+
+		<span class='theW'>A Wobblin piece of text.</span> <p /><p />
+		<span class='theW'>Another Wobblin piece of text</span> <p /><p />
+		<div class='theW' style='margin: 10px; padding: 10px; width: 60px; height: 60px; border: 1px solid black; float: left;'></div>
+		<div class='theW' style='margin: 10px; padding: 10px; width: 60px; height: 60px; border: 1px solid black; float: left;'></div>
+		<div class='theW' style='margin: 10px; padding: 10px; width: 60px; height: 60px; border: 1px solid black; float: left;'></div>
+		<div class='theW' style='margin: 10px; padding: 10px; width: 60px; height: 60px; border: 1px solid black; float: left;'></div>
+		<div class='theW' style='margin: 10px; padding: 10px; width: 60px; height: 60px; border: 1px solid black; float: left;'></div>		
+	</body>
+</html>
